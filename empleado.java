@@ -27,4 +27,16 @@ class Empleado {
         return portfolio;
     }
 
+    public static Empleado max(ArrayList<Empleado> empleados) {
+        if (empleados.isEmpty()) {
+            return null;
+        }
+        Empleado maxEmpleado = empleados.get(0);
+        for (Empleado emp : empleados) {
+            if (emp.getPortfolio().media() > maxEmpleado.getPortfolio().media()) {
+                maxEmpleado = emp;
+            }
+        }
+        return maxEmpleado;
+    }
 }
